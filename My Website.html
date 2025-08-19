@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shankar Graphics - Professional Design Services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        :root {
+            --primary: #3a86ff;
+            --secondary: #8338ec;
+            --dark: #212529;
+            --light: #f8f9fa;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            background-color: var(--light);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-card {
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-bottom: 3px solid var(--primary);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .portfolio-item {
+            overflow: hidden;
+        }
+        
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(58, 134, 255, 0.8), rgba(131, 56, 236, 0.8));
+            opacity: 0;
+            transition: all 0.3s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+        
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white shadow-md z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <a href="#" class="text-2xl font-bold gradient-text">SHANKAR GRAPHICS</a>
+            </div>
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="nav-link text-gray-800">Home</a>
+                <a href="#services" class="nav-link text-gray-800">Services</a>
+                <a href="#portfolio" class="nav-link text-gray-800">Portfolio</a>
+                <a href="#about" class="nav-link text-gray-800">About</a>
+                <a href="#contact" class="nav-link text-gray-800">Contact</a>
+            </div>
+            <button class="md:hidden focus:outline-none">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center pt-20">
+        <div class="container mx-auto px-4 py-16 md:py-24 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-12 md:mb-0">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+                    We Create <span class="gradient-text">Stunning Graphics</span> For Your Brand
+                </h1>
+                <p class="text-gray-600 text-lg mb-8">
+                    Transform your vision into captivating visuals with our professional graphic design services. Let us help you stand out in the digital world.
+                </p>
+                <div class="flex space-x-4">
+                    <a href="#contact" class="btn-primary px-8 py-3 text-white rounded-full font-semibold">Get Started</a>
+                    <a href="#portfolio" class="px-8 py-3 border-2 border-gray-200 rounded-full font-semibold text-gray-700">View Work</a>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <img src="https://placehold.co/600x500" alt="Abstract digital illustration of creative graphic design process with colorful shapes and tools" class="rounded-lg floating" />
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Our <span class="gradient-text">Services</span></h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    We offer a comprehensive range of graphic design services to meet all your creative needs
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="service-card bg-white p-8 rounded-lg shadow-sm">
+                    <div class="w-16 h-16 rounded-full bg-indigo-50 flex items-center justify-center mb-6">
+                        <i class="fas fa-paint-brush text-2xl gradient-text"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Logo Design</h3>
+                    <p class="text-gray-600 mb-4">
+                        Unique and memorable logo designs that perfectly represent your brand identity and values.
+                    </p>
+                    <a href="#" class="text-indigo-600 font-medium flex items-center">
+                        Learn more <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="service-card bg-white p-8 rounded-lg shadow-sm">
+                    <div class="w-16 h-16 rounded-full bg-indigo-50 flex items-center justify-center mb-6">
+                        <i class="fas fa-object-group text-2xl gradient-text"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Brand Identity</h3>
+                    <p class="text-gray-600 mb-4">
+                        Complete brand packages including color schemes, typography, and style guidelines.
+                    </p>
+                    <a href="#" class="text-indigo-600 font-medium flex items-center">
+                        Learn more <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="service-card bg-white p-8 rounded-lg shadow-sm">
+                    <div class="w-16 h-16 rounded-full bg-indigo-50 flex items-center justify-center mb-6">
+                        <i class="fas fa-fill-drip text-2xl gradient-text"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Print Design</h3>
+                    <p class="text-gray-600 mb-4">
+                        High-quality designs for business cards, brochures, banners, and other print materials.
+                    </p>
+                    <a href="#" class="text-indigo-600 font-medium flex items-center">
+                        Learn more <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="service-card bg-white p-8 rounded-lg shadow-sm">
+                    <div class="w-16 h-16 rounded-full bg-indigo-50 flex items-center justify-center mb-6">
+                        <i class="fas fa-mobile-alt text-2xl gradient-text"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">UI/UX Design</h3>
+                    <p class="text-gray-600 mb-4">
+                        Intuitive and visually appealing user interfaces for websites and mobile applications.
+                    </p>
+                    <a href="#" class="text-indigo-600 font-medium flex items-center">
+                        Learn more <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                
+                <!-- Service 5 -->
+                <div class="service-card bg-white p-8 rounded-lg shadow-sm">
+                    <div class="w-16 h-16 rounded-full bg-indigo-50 flex items-center justify-center mb-6">
+                        <i class="fas fa-images text-2xl gradient-text"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Social Media Graphics</h3>
+                    <p class="text-gray-600 mb-4">
+                        Engaging visuals for all your social media platforms to boost your online presence.
+                    </p>
+                    <a href="#" class="text-indigo-600 font-medium flex items-center">
+                        Learn more <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                
+                <!-- Service 6 -->
+                <div class="service-card bg-white p-8 rounded-lg shadow-sm">
+                    <div class="w-16 h-16 rounded-full bg-indigo-50 flex items-center justify-center mb-6">
+                        <i class="fas fa-video text-2xl gradient-text"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Motion Graphics</h3>
+                    <p class="text-gray-600 mb-4">
+                        Dynamic animations and motion graphics to bring your brand story to life.
+                    </p>
+                    <a href="#" class="text-indigo-600 font-medium flex items-center">
+                        Learn more <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Our <span class="gradient-text">Portfolio</span></h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Explore our collection of stunning designs created for our valued clients
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+                <!-- Portfolio Item 1 -->
+                <div class="portfolio-item relative rounded-lg overflow-hidden shadow-md">
+                    <img src="https://placehold.co/600x400" alt="Minimalist corporate logo design in blue and white with abstract geometric elements" class="w-full h-64 object-cover" />
+                    <div class="portfolio-overlay">
+                        <button class="px-6 py-2 bg-white rounded-full font-semibold">View Project</button>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 2 -->
+                <div class="portfolio-item relative rounded-lg overflow-hidden shadow-md">
+                    <img src="https://placehold.co/600x400" alt="Vibrant packaging design for organic food products with fresh ingredients illustration" class="w-full h-64 object-cover" />
+                    <div class="portfolio-overlay">
+                        <button class="px-6 py-2 bg-white rounded-full font-semibold">View Project</button>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 3 -->
+                <div class="portfolio-item relative rounded-lg overflow-hidden shadow-md">
+                    <img src="https://placehold.co/600x400" alt="Modern website interface design for tech startup with dark theme and vibrant accents" class="w-full h-64 object-cover" />
+                    <div class="portfolio-overlay">
+                        <button class="px-6 py-2 bg-white rounded-full font-semibold">View Project</button>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 4 -->
+                <div class="portfolio-item relative rounded-lg overflow-hidden shadow-md">
+                    <img src="https://placehold.co/600x400" alt="Creative social media campaign graphics with bold typography and modern aesthetic" class="w-full h-64 object-cover" />
+                    <div class="portfolio-overlay">
+                        <button class="px-6 py-2 bg-white rounded-full font-semibold">View Project</button>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 5 -->
+                <div class="portfolio-item relative rounded-lg overflow-hidden shadow-md">
+                    <img src="https://placehold.co/600x400" alt="Elegant business stationery set including letterhead, business card and envelope design" class="w-full h-64 object-cover" />
+                    <div class="portfolio-overlay">
+                        <button class="px-6 py-2 bg-white rounded-full font-semibold">View Project</button>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 6 -->
+                <div class="portfolio-item relative rounded-lg overflow-hidden shadow-md">
+                    <img src="https://placehold.co/600x400" alt="Animated explainer video frames with colorful characters and dynamic text effects" class="w-full h-64 object-cover" />
+                    <div class="portfolio-overlay">
+                        <button class="px-6 py-2 bg-white rounded-full font-semibold">View Project</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center">
+                <a href="#" class="btn-primary px-8 py-3 text-white rounded-full font-semibold inline-block">View All Projects</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-12 md:mb-0">
+                    <img src="https://placehold.co/500x600" alt="Professional graphic designer working in modern studio with multiple monitors and design tools" class="rounded-lg shadow-lg" />
+                </div>
+                <div class="md:w-1/2 md:pl-12">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">About <span class="gradient-text">Shankar Graphics</span></h2>
+                    <p class="text-gray-600 mb-6">
+                        Founded in 2010, Shankar Graphics has been delivering exceptional design solutions to businesses of all sizes. Our team of passionate designers combines creativity with technical expertise to bring your vision to life.
+                    </p>
+                    <p class="text-gray-600 mb-8">
+                        We believe in building long-term relationships with our clients through quality work, timely delivery, and excellent customer service. Our design philosophy revolves around simplicity, functionality, and visual impact.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 mb-8">
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 rounded-full bg-indigo-50 flex items-center justify-center mr-4">
+                                <i class="fas fa-trophy gradient-text"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">100+ Projects</h4>
+                                <p class="text-sm text-gray-500">Completed</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 rounded-full bg-indigo-50 flex items-center justify-center mr-4">
+                                <i class="fas fa-smile gradient-text"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">80+ Clients</h4>
+                                <p class="text-sm text-gray-500">Satisfied</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 rounded-full bg-indigo-50 flex items-center justify-center mr-4">
+                                <i class="fas fa-award gradient-text"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">15 Awards</h4>
+                                <p class="text-sm text-gray-500">Won</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 rounded-full bg-indigo-50 flex items-center justify-center mr-4">
+                                <i class="fas fa-user-friends gradient-text"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">10+ Team</h4>
+                                <p class="text-sm text-gray-500">Members</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#contact" class="btn-primary px-8 py-3 text-white rounded-full font-semibold inline-block">Get in Touch</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">What Clients <span class="gradient-text">Say</span></h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Don't just take our word for it - here's what our clients have to say
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="p-8 bg-gray-50 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <img src="https://placehold.co/80x80" alt="Portrait of satisfied client Rajesh Kumar, CEO of TechSolutions" class="w-12 h-12 rounded-full object-cover mr-4" />
+                        <div>
+                            <h4 class="font-bold">Rajesh Kumar</h4>
+                            <p class="text-sm text-gray-500">CEO, TechSolutions</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">
+                        "Shankar Graphics transformed our brand identity with their exceptional logo and website design. Their attention to detail and creative approach exceeded our expectations."
+                    </p>
+                    <div class="mt-4 text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="p-8 bg-gray-50 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <img src="https://placehold.co/80x80" alt="Portrait of happy client Priya Sharma, Marketing Director at OrganicLife" class="w-12 h-12 rounded-full object-cover mr-4" />
+                        <div>
+                            <h4 class="font-bold">Priya Sharma</h4>
+                            <p class="text-sm text-gray-500">Marketing Director, OrganicLife</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">
+                        "We've been working with Shankar Graphics for all our packaging and marketing materials. Their designs have significantly boosted our product sales and brand recognition."
+                    </p>
+                    <div class="mt-4 text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="p-8 bg-gray-50 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <img src="https://placehold.co/80x80" alt="Portrait of pleased client Amit Patel, Founder of StartupX" class="w-12 h-12 rounded-full object-cover mr-4" />
+                        <div>
+                            <h4 class="font-bold">Amit Patel</h4>
+                            <p class="text-sm text-gray-500">Founder, StartupX</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">
+                        "The UI/UX design for our mobile app by Shankar Graphics was exceptional. They perfectly understood our user needs and created an intuitive interface with beautiful visuals."
+                    </p>
+                    <div class="mt-4 text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Get in <span class="gradient-text">Touch</span></h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Ready to start your project? Contact us today and let's create something amazing together
+                </p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-md overflow-hidden">
+                <div class="md:flex">
+                    <div class="md:w-1/2 p-8">
+                        <h3 class="text-xl font-bold mb-6">Contact Information</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 rounded-full bg-indigo-50 flex items-center justify-center mr-4">
+                                    <i class="fas fa-map-marker-alt gradient-text"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold">Address</h4>
+                                    <p class="text-gray-600">Bajrang Market, Behind Bus Stand, Shujalpur City, Dist. Shajapur 465333</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 rounded-full bg-indigo-50 flex items-center justify-center mr-4">
+                                    <i class="fas fa-phone-alt gradient-text"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold">Phone</h4>
+                                    <p class="text-gray-600">+91 96309 43790</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 rounded-full bg-indigo-50 flex items-center justify-center mr-4">
+                                    <i class="fas fa-envelope gradient-text"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold">Email</h4>
+                                    <p class="text-gray-600">vikasv9630@gmail.com</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 rounded-full bg-indigo-50 flex items-center justify-center mr-4">
+                                    <i class="fas fa-clock gradient-text"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold">Working Hours</h4>
+                                    <p class="text-gray-600">Daily: 9 AM - 7 PM</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8">
+                            <h4 class="font-bold mb-4">Follow Us</h4>
+                            <div class="flex space-x-4">
+                                <a href="#" class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center hover:bg-indigo-100 transition-colors">
+                                    <i class="fab fa-facebook-f gradient-text"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center hover:bg-indigo-100 transition-colors">
+                                    <i class="fab fa-twitter gradient-text"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center hover:bg-indigo-100 transition-colors">
+                                    <i class="fab fa-instagram gradient-text"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center hover:bg-indigo-100 transition-colors">
+                                    <i class="fab fa-linkedin-in gradient-text"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center hover:bg-indigo-100 transition-colors">
+                                    <i class="fab fa-behance gradient-text"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 bg-gray-50 p-8">
+                        <h3 class="text-xl font-bold mb-6">Send Us a Message</h3>
+                        <form>
+                            <div class="mb-4">
+                                <label for="name" class="block text-gray-700 font-medium mb-2">Your Name</label>
+                                <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                            </div>
+                            <div class="mb-4">
+                                <label for="email" class="block text-gray-700 font-medium mb-2">Your Email</label>
+                                <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                            </div>
+                            <div class="mb-4">
+                                <label for="subject" class="block text-gray-700 font-medium mb-2">Subject</label>
+                                <input type="text" id="subject" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                            </div>
+                            <div class="mb-6">
+                                <label for="message" class="block text-gray-700 font-medium mb-2">Message</label>
+                                <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"></textarea>
+                            </div>
+                            <button type="submit" class="btn-primary w-full py-3 text-white rounded-md font-semibold">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Frequently Asked <span class="gradient-text">Questions</span></h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Common questions about our design process and services
+                </p>
+            </div>
+            
+            <div class="max-w-3xl mx-auto">
+                <div class="space-y-4">
+                    <!-- FAQ 1 -->
+                    <div class="border border-gray-200 rounded-lg overflow-hidden">
+                        <button class="w-full px-6 py-4 text-left flex justify-between items-center font-medium bg-gray-50 hover:bg-gray-100 transition-colors">
+                            <span>How long does a typical design project take?</span>
+                            <i class="fas fa-chevron-down transition-transform"></i>
+                        </button>
+                        <div class="p-6 bg-white">
+                            <p class="text-gray-600">
+                                Project timelines vary depending on the scope and complexity. Simple logo designs may take 1-2 weeks, while comprehensive branding projects can take 4-6 weeks. We'll provide a detailed timeline after our initial consultation.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ 2 -->
+                    <div class="border border-gray-200 rounded-lg overflow-hidden">
+                        <button class="w-full px-6 py-4 text-left flex justify-between items-center font-medium bg-gray-50 hover:bg-gray-100 transition-colors">
+                            <span>What is your design process?</span>
+                            <i class="fas fa-chevron-down transition-transform"></i>
+                        </button>
+                        <div class="p-6 bg-white">
+                            <p class="text-gray-600">
+                                Our process involves: 1) Discovery and research, 2) Concept development, 3) Initial drafts, 4) Client feedback and revisions, and 5) Final delivery. We maintain clear communication at every stage to ensure the final product meets your expectations.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ 3 -->
+                    <div class="border border-gray-200 rounded-lg overflow-hidden">
+                        <button class="w-full px-6 py-4 text-left flex justify-between items-center font-medium bg-gray-50 hover:bg-gray-100 transition-colors">
+                            <span>Do you offer revisions?</span>
+                            <i class="fas fa-chevron-down transition-transform"></i>
+                        </button>
+                        <div class="p-6 bg-white">
+                            <p class="text-gray-600">
+                                Yes, we include 2-3 rounds of revisions in all our design packages to ensure you're completely satisfied with the final result. Additional revisions can be accommodated at an extra cost.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ 4 -->
+                    <div class="border border-gray-200 rounded-lg overflow-hidden">
+                        <button class="w-full px-6 py-4 text-left flex justify-between items-center font-medium bg-gray-50 hover:bg-gray-100 transition-colors">
+                            <span>What file formats will I receive?</span>
+                            <i class="fas fa-chevron-down transition-transform"></i>
+                        </button>
+                        <div class="p-6 bg-white">
+                            <p class="text-gray-600">
+                                We provide all final designs in industry-standard formats including vector files (AI, EPS, PDF) and raster files (PNG, JPG) at various resolutions. For web projects, we also provide optimized assets in WebP, SVG formats when applicable.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ 5 -->
+                    <div class="border border-gray-200 rounded-lg overflow-hidden">
+                        <button class="w-full px-6 py-4 text-left flex justify-between items-center font-medium bg-gray-50 hover:bg-gray-100 transition-colors">
+                            <span>Can you help with printing my designs?</span>
+                            <i class="fas fa-chevron-down transition-transform"></i>
+                        </button>
+                        <div class="p-6 bg-white">
+                            <p class="text-gray-600">
+                                Absolutely! We have established relationships with several high-quality printers and can coordinate the entire printing process for you, ensuring your materials look their best. We'll handle all the technical specifications and quality control.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-gradient-to-r from-indigo-500 to-purple-600 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Elevate Your Brand?</h2>
+            <p class="text-xl max-w-2xl mx-auto mb-8 opacity-90">
+                Let's discuss how we can create stunning visuals that make your brand stand out
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                <a href="#contact" class="bg-white text-indigo-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors">Get a Free Quote</a>
+                <a href="tel:+919876543210" class="border-2 border-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-indigo-600 transition-colors">Call Us Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4 gradient-text">SHANKAR GRAPHICS</h3>
+                    <p class="text-gray-400">
+                        We create stunning visual identities and designs that help businesses stand out and connect with their audience.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition-colors">Services</a></li>
+                        <li><a href="#portfolio" class="text-gray-400 hover:text-white transition-colors">Portfolio</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition-colors">About</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Logo Design</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Brand Identity</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Print Design</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">UI/UX Design</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Motion Graphics</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Contact Info</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-center">
+                            <i class="fas fa-map-marker-alt mr-3"></i>
+                            <span>Bajrang Market, Behind Bus Stand, Shujalpur City, Dist. Shajapur 465333 M.P.</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt mr-3"></i>
+                            <span>+91 96309 43790</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-3"></i>
+                            <span>vikasv9630@gmail.com</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-clock mr-3"></i>
+                            <span>Daily: 9 AM - 7 PM</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 mb-4 md:mb-0">© 2023 Shankar Graphics. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-behance"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Mobile menu toggle
+        const mobileMenuBtn = document.querySelector('.md\\:hidden');
+        const navLinks = document.querySelector('.md\\:flex');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('hidden');
+            navLinks.classList.toggle('flex');
+            navLinks.classList.toggle('flex-col');
+            navLinks.classList.toggle('absolute');
+            navLinks.classList.toggle('top-16');
+            navLinks.classList.toggle('left-0');
+            navLinks.classList.toggle('right-0');
+            navLinks.classList.toggle('bg-white');
+            navLinks.classList.toggle('p-4');
+            navLinks.classList.toggle('shadow-md');
+        });
+        
+        // FAQ accordion
+        const faqButtons = document.querySelectorAll('.faq-button');
+        
+        faqButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const answer = button.nextElementSibling;
+                const icon = button.querySelector('i');
+                
+                // Toggle answer visibility
+                answer.classList.toggle('hidden');
+                
+                // Rotate icon
+                icon.classList.toggle('transform');
+                icon.classList.toggle('rotate-180');
+            });
+        });
+        
+        // Form submission
+        const contactForm = document.querySelector('form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                alert('Thank you for your message! We will get back to you soon.');
+                contactForm.reset();
+            });
+        }
+    </script>
+</body>
+</html>
